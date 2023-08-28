@@ -15,10 +15,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2 
     - name: Initializing Setup
-      run: ./caidat.ps1
-    - name: Khởi động VPS
-      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-    - name: Keep Alive
-      run: ./time.ps1
+       run: ./setup.ps1 
+  - name: Starting CRD 
+   run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }} 
+- name: Keep Alive 
+run: ./time.ps1
